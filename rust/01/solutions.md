@@ -12,7 +12,7 @@ fn main() {
 }
 ```
 
-### Answer 1
+### Answer
 
 This code **DOES NOT** compile, since ownership of s1 is moved to s2, trying to use s1 will cause a compile-time error.
 
@@ -37,7 +37,7 @@ fn main() {
 - [x] c. **Change String to &str in the function signature**
 - [ ] d. Change String to str in the function signature
 
-### Answer 2
+### Answer
 
 Cloning the string will work, but it's inefficient and unnecessary.
 
@@ -60,7 +60,7 @@ fn main() {
 }
 ```
 
-### Answer 3
+### Answer
 
 The code **DOES** compile, and it's output is:
 
@@ -93,7 +93,7 @@ fn main() {
 - [ ] c. The lifetime of the longer of s1 and s2
 - [ ] d. This code doesn't compile
 
-### Answer 4
+### Answer
 
 The `r` string slice reference will only be valid as long as both s1 and s2 are valid, since the compiler can't infer which one is shorter at compile time, any one of these references becoming invalid could lead to _UB_ if `r` were to be used after that.
 
@@ -111,6 +111,6 @@ fn main() {
 }
 ```
 
-### Answer 5
+### Answer
 
-This code **DOES NOT** compile, since `r3` mutable borrow is live, using `r1` or `r2` would be a violation of the borrowing rules, as it could lead to _data races_, unpredictable behaviour, and even point to invalid memory in the event of a _reallocation_.
+This code **DOES NOT** compile, since the `r3` mutable borrow is live, using `r1` or `r2` would be in violation of the borrow checker, as it could lead to _data races_, unpredictable behaviour, and even point to invalid memory in the event of a _reallocation_.
