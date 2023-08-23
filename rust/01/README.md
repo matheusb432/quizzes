@@ -1,5 +1,9 @@
 # 01 Questions
 
+Difficulty: Medium
+
+Quiz focused on Rust's _borrow checker_.
+
 ## Question 1
 
 Does this code compile? If it does, what is it's output?
